@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.newmotion;
+
+message AuthenticateRequest {
+  string charge_station_id = 1;
+  string password = 2;
+}
+
+message AuthenticateResponse {
+  bool authenticated = 1;
+}
+
+service ChargeStationAuthenticator {
+  rpc Authenticate (AuthenticateRequest) returns (AuthenticateResponse);
+}
